@@ -39,17 +39,21 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+  query BlogIndexQuery($locale: String = "en-US") {
+    allContentfulBlogPost(
+      sort: { fields: [publishDate], order: DESC }
+      filter: { node_locale: {eq: $locale } }
+    ) {
       edges {
         node {
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
+          node_locale
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           description {
