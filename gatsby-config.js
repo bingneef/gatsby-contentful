@@ -29,6 +29,20 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Snowflake`,
+        short_name: `Snowflake`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/assets/icon.png`, // This path is relative to the root of the site.
+      }
+    },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-netlify',
   ],
 }
