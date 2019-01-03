@@ -32,7 +32,11 @@
     "inquirer": "^6.2.0",
     "prettier": "^1.14.3",
     "rimraf": "^2.6.2",
-    "yargs-parser": "^11.0.0"
+    "storybook": "^1.0.0",
+    "yargs-parser": "^11.0.0",
+    "@storybook/react": "^4.1.4",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-links": "^4.1.4"
   },
   "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
   "keywords": [
@@ -56,6 +60,8 @@
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "heroku-postbuild": "gatsby build",
-    "cleanup-repository": "rimraf bin contentful && yarn remove contentful-import chalk inquirer rimraf "
+    "cleanup-repository": "rimraf bin contentful && yarn remove contentful-import chalk inquirer rimraf ",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
