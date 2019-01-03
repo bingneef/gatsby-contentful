@@ -59,6 +59,7 @@ typings/
 
 # build folder
 public
+storybook-static
 
 # gatsby cache folder
 .cache
