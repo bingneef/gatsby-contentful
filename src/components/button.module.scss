@@ -1,0 +1,35 @@
+.button {
+  font-family: "Poppins", Helvetica, sans-serif;
+  background-color: #FFCC00;
+  border-radius: 3px;
+  border-width: 2px;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:first-child {
+    margin-right: 1rem;
+  }
+}
+
+.buttonSecondary {
+  font-family: "Poppins", Helvetica, sans-serif;
+  border: 1px solid #333;
+  border-radius: 3px;
+  border-width: 2px;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:first-child {
+    margin-right: 1rem;
+  }
+}

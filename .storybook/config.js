@@ -1,6 +1,9 @@
-import { configure } from '@storybook/react'
+import React from 'react'
+import { configure, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions';
+import { IntlProvider } from 'react-intl'
 
+import { messages } from '../src/components/layout';
 import '../src/components/base.css';
 import './storybook.css'
 
@@ -22,4 +25,13 @@ global.__PATH_PREFIX__ = ''
 window.___navigate = pathname => {
   action('NavigateTo:')(pathname)
 }
+
+// Hooks the locale in there
+const LocaleDecorator = (storyFn) => (
+  <IntlProvider locale={'nl'} messages={messages['nl']}>
+    {storyFn()}
+  </IntlProvider>
+);
+addDecorator(LocaleDecorator);
+
 configure(loadStories, module)

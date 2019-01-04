@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700');
+
 @font-face {
   font-family: "Avenir";
   font-weight: 400;
@@ -7,12 +9,16 @@
 }
 
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "Open Sans";
   font-size: 1em;
   line-height: 1.65;
   color: #373F49;
   background: #eee;
   margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", Helvetica, sans-serif;
 }
 
 img {
@@ -38,18 +44,6 @@ a {
 }
 
 /**
- * article grid
- */
-.article-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5vmin;
-}
-
-/**
  *
  */
 .section-headline {
@@ -70,3 +64,8 @@ a {
   .list-inline li {
     display: inline-block;
   }
+
+
+.gatsby-image-wrapper {
+  height: 100%;
+}

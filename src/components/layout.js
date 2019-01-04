@@ -1,26 +1,28 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { IntlProvider, addLocaleData } from 'react-intl'
 import base from './base.css'
 import Container from './container'
 import Navigation from './navigation'
 
-class Template extends React.Component {
-  render() {
-    const { location, children } = this.props
-    let header
+// Locale data
+import enData from 'react-intl/locale-data/en'
+import nlData from 'react-intl/locale-data/nl'
 
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
+// Messages
+import en from '../i18n/en-US.json'
+import nl from '../i18n/nl.json'
 
-    return (
-      <Container>
-        <Navigation />
-        {children}
-      </Container>
-    )
-  }
-}
+export const messages = { 'en-US': en, nl }
 
-export default Template
+addLocaleData([...enData, ...nlData])
+
+const Layout = ({ locale, children }) => (
+  <IntlProvider locale={locale} messages={messages[locale]}>
+    <Container>
+      {/* <Navigation /> */}
+      {children}
+    </Container>
+  </IntlProvider>
+)
+
+export default Layout

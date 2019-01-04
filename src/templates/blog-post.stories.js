@@ -42,4 +42,4 @@ const WrapperDecorator = (storyFn) => (
 
 storiesOf('BlogPost', module)
   .addDecorator(WrapperDecorator)
-  .add('Default', () => <BlogPost data={data} />);
+  .add('Default', () => <BlogPost pageContext={{locale: 'nl'}} data={data} />);

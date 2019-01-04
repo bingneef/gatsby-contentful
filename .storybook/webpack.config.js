@@ -29,11 +29,13 @@ module.exports = (baseConfig, env, defaultConfig) => {
     throw new Error('Could not find Storybook\'s CSS loader');
 
   // Exclude CSS Modules from Storybook's standard CSS processing
-  defaultConfig.module.rules[cssLoaderIndex].exclude = /\.module\.css$/;
+  defaultConfig.module.rules[cssLoaderIndex].exclude = /\.module\.scss$/;
+  
+  const path = require("path");
 
   // Add specific loader rule for CSS Modules
   defaultConfig.module.rules.push({
-    test: /\.module\.css$/,
+    test: /\.module\.scss$/,
     use: [
       { loader: 'style-loader' },
       {
@@ -44,6 +46,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
           localIdentName: '[path]-[local]-[hash:base64:5]'
         }
       },
+      { loader: 'sass-loader'}
     ],
     include: path.resolve(__dirname, '../src')
   });
