@@ -58,7 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
             path = `/${post.node.node_locale}${path}`
           }
           createPage({
-            path: `/blog/${post.node.slug}/`,
+            path,
             component: blogPost,
             context: {
               locale: post.node.node_locale,
