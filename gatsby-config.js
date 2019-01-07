@@ -44,6 +44,13 @@ module.exports = {
         icon: `src/assets/icon.png`, // This path is relative to the root of the site.
       }
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `red`,
+        showSpinner: false,
+      },
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
   ],

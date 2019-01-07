@@ -1,18 +1,36 @@
+@import '../vars.scss';
 .preview {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  @media(min-width: $screen-md-min) {
+    flex-direction: row;
+  }
 }
 
 .previewReverse {
-  flex-direction: row-reverse;
+  @media(min-width: $screen-md-min) {
+    flex-direction: row-reverse;
+  }
 }
 
 .contentContainer {
-  padding: 5rem;
+  padding: 1rem;
+  @media(min-width: $screen-md-min) {
+    padding: 5rem;
+  }
+}
+
+.previewTitle {
+  margin-top: 0;
 }
 
 .content, .heroImage {
-  height: 50vw;
-  max-height: 80vh;
   flex: 1;
+  width: 100%;
+  @media(min-width: $screen-md-min) {
+    height: 50vw;
+    max-height: 80vh;
+    width: initial;
+  }
 }
